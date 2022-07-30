@@ -1,7 +1,7 @@
 // import React, {Component} from 'react';
 import {AppRegistry, Text, SafeAreaView, View} from 'react-native';
 import {name as appName} from './app.json';
-// import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
+import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
 // import {App} from './src/App';
 
 import React from 'react';
@@ -17,6 +17,8 @@ import BasicAnimationScreen from './src/screens/basicAnimation/index';
 import OpacityAnimation from './src/screens/basicAnimation/opacity/index';
 import ScaleAnimation from './src/screens/basicAnimation/scale/index';
 import TransformAnimation from './src/screens/basicAnimation/transform/index';
+import PanGestureAnimation from './src/screens/basicAnimation/panGesture/index';
+import Interpolation from './src/screens/basicAnimation/interpolation';
 
 // create a "stack"
 const MyStack = createNativeStackNavigator();
@@ -37,9 +39,11 @@ const App = () => {
           name="Transform Screen"
           component={TransformAnimation}
         />
+        <MyStack.Screen name="PanGesture" component={PanGestureAnimation} />
+        <MyStack.Screen name="Interpolation" component={Interpolation} />
       </MyStack.Navigator>
     </NavigationContainer>
   );
 };
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => gestureHandlerRootHOC(App));

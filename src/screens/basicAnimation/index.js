@@ -25,6 +25,10 @@ const BasicAnimationScreen = props => {
       props.navigation.navigate('Scale Screen');
     } else if (item.item.index == 3) {
       props.navigation.navigate('Transform Screen');
+    } else if (item.item.index == 4) {
+      props.navigation.navigate('PanGesture');
+    } else if (item.item.index == 5) {
+      props.navigation.navigate('Interpolation');
     } else {
       //props.navigation.navigate('Screen2');
       alert('Coming soon');

@@ -28,6 +28,14 @@ export function getBasicAnimationList() {
     index: 3,
     label: 'Transform',
   });
+  viewModel.push({
+    index: 4,
+    label: 'PanGesture',
+  });
+  viewModel.push({
+    index: 5,
+    label: 'Interpolation',
+  });
 
   return viewModel;
 }
